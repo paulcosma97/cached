@@ -42,37 +42,9 @@ class CacheTest {
         for (let i = 0; i < n; i++);
         return n + 1;
     }
-
-    @Cached(1000)
-    async someMethod(time) {
-        await this.wait(time);
-    }
-
-    @Cached(1000)
-    async someOtherMethod(time) {
-        await this.wait(time);
-    }
-
-    wait(time) {
-        return new Promise(resolve => setTimeout(resolve, 500));
-    }
 }
 
 const cacheTest = new CacheTest();
-
-const shouldNotExpire = async (t: ExecutionContext) => {
-    await cacheTest.someMethod(500);
-    await cacheTest.wait(500);
-    const time = performance.now(); 
-    await cacheTest.someMethod(500);    
-    const totalTime = performance.now() - time;
-
-    if (totalTime < 500) {
-        return t.pass();
-    }
-
-    return t.fail();
-}
 
 const fasterReturns = (t: ExecutionContext, methodName, params) => {
     const trial = () => {
@@ -152,5 +124,3 @@ test('cached function has same output as original sampleAsyncMethod test:2', sam
 test('cached function has same output as original sampleAsyncMethod test:3', sameReturnAsync, 'sampleAsyncMethod', [{hello: 'world'}]);
 test('cached function has same output as original sampleAsyncMethod test:4', sameReturnAsync, 'sampleAsyncMethod', [false]);
 test('cached function has same output as original sampleAsyncMethod test:5', sameReturnAsync, 'sampleAsyncMethod', [undefined]);
-
-test('cache wont expire', shouldNotExpire);

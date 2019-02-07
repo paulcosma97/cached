@@ -1,3 +1,3 @@
 import Cached from "./Cached";
 
-export default Cached
+export default Cached;

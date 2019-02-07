@@ -1,6 +1,6 @@
 {
   "name": "@jeaks03/cached",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Just another TypeScript library",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
@@ -39,7 +39,8 @@
     "tslint": "*",
     "tslint-config-prettier": "*",
     "tslint-immutable": "*",
-    "typescript": "*"
+    "typescript": "*",
+    "nodemon": "^1.18.9"
   },
   "ava": {
     "failFast": true,
@@ -64,6 +65,7 @@
     ]
   },
   "dependencies": {
+    "@jeaks03/logger": "0.0.1",
     "@types/node": "*"
   }
 }
