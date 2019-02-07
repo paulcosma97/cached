@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
   "name": "@jeaks03/cached",
   "version": "1.0.0",
-=======
-  "name": "jeaks03@cached",
-  "version": "0.0.1",
->>>>>>> 01ae09953250e0c12f8e3b3aecfb3cfdde95577b
   "description": "Just another TypeScript library",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
