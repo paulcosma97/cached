@@ -1,0 +1,69 @@
+{
+  "name": "YOUR_PROJECT_NAME",
+  "version": "0.0.1",
+  "description": "Just another TypeScript library",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
+  "repository": "YOUR_REPOSITORY",
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "describe": "npm-scripts-info",
+    "build": "run-s clean && run-p build:main",
+    "build:main": "tsc -p tsconfig.json",
+    "test": "run-s build test:unit",
+    "test:unit": "nyc ava",
+    "reset": "git clean -dfx && git reset --hard && npm i",
+    "clean": "trash build test",
+    "dev": "nodemon -e ts --watch src --exec \"run-s clean && tsc -p tsconfig.json && node build/index.js\""
+  },
+  "scripts-info": {
+    "info": "Display information about the package scripts",
+    "build": "Clean and rebuild the project",
+    "test": "Lint and unit test the project"
+  },
+  "engines": {
+    "node": ">=8.9"
+  },
+  "devDependencies": {
+    "ava": "^1.0.0-beta.7",
+    "codecov": "^3.1.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "gh-pages": "^2.0.1",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^13.1.0",
+    "opn-cli": "^4.0.0",
+    "prettier": "^1.15.2",
+    "standard-version": "^4.4.0",
+    "trash-cli": "^1.4.0",
+    "tslint": "*",
+    "tslint-config-prettier": "*",
+    "tslint-immutable": "*",
+    "typescript": "*"
+  },
+  "ava": {
+    "failFast": true,
+    "files": [
+      "build/**/*.spec.js"
+    ],
+    "sources": [
+      "build/**/*.js"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js"
+    ]
+  },
+  "dependencies": {
+    "@types/node": "*"
+  }
+}
