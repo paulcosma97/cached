@@ -135,10 +135,10 @@ test('cached function has same output as original sampleMethod1 test:2', sameRet
 test('cached function has same output as original sampleMethod1 test:3', sameReturn, 'sampleMethod1', {arg1: -1, arg2: 2, args: [1, false, 3]});
 test('cached function has same output as original sampleMethod1 test:4', sameReturn, 'sampleMethod1', {arg1: 1, arg2: undefined, args: [1, null, 3]});
 
-test('cached function has same output as original sampleMethod2 test:1', sameReturn, 'sampleMethod2', 1, 2, 3);
-test('cached function has same output as original sampleMethod2 test:2', sameReturn, 'sampleMethod2', 'a', 'b', 'c');
-test('cached function has same output as original sampleMethod2 test:3', sameReturn, 'sampleMethod2', {hello: 'world'});
-test('cached function has same output as original sampleMethod2 test:4', sameReturn, 'sampleMethod2', false);
+test('cached function has same output as original sampleMethod2 test:1', sameReturn, 'sampleMethod2', [1, 2, 3]);
+test('cached function has same output as original sampleMethod2 test:2', sameReturn, 'sampleMethod2', ['a', 'b', 'c']);
+test('cached function has same output as original sampleMethod2 test:3', sameReturn, 'sampleMethod2', [{hello: 'world'}]);
+test('cached function has same output as original sampleMethod2 test:4', sameReturn, 'sampleMethod2', [false]);
 test('cached function has same output as original sampleMethod2 test:5', sameReturn, 'sampleMethod2', undefined);
 
 test('cached function has same output as original sampleMethod3 test:1', sameReturn, 'sampleMethod3', [1, 2, 3]);
